@@ -1,0 +1,27 @@
+<html ng-app="gameLvR">
+	<head>
+
+		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">
+		<link rel="stylesheet" href="style.css">
+		<script src="angular.min.js"></script>
+		<script src="app.js"></script>
+		<script src="filters.js"></script>
+	</head>
+	<body class = "container-fluid" ng-controller="GameController">
+		<div id="top" class="row">
+			<h1 class="text-center">
+				<span class="points">
+					{{points}}
+				</span>
+				<span class="direciton">
+					{{command}} {{feedback|checkmark}}
+				</span>
+			</h1>
+		</div>
+		<div class="row">
+			<div id="left" class="col-md-6 side" ng-click="tryClick('LEFT')"></div>
+			<div id="right" class="col-md-6 side" ng-click="tryClick('RIGHT')"></div>
+		</div>
+	
+	</body>
+</html>

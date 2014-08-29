@@ -1,0 +1,24 @@
+body{
+	
+}
+
+.side{
+	height:80%;
+}
+.correct{
+	color:green;
+}
+.wrong{
+	color:red;
+}
+#left{
+	background-color:blue;
+}
+#right{
+	background-color:orange;S
+}
+#top{
+	height:20%;
+	padding-top: 20px;
+	font-size: 4em;
+}
