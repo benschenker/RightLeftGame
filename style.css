@@ -6,10 +6,10 @@ body{
 	height:80%;
 }
 .correct{
-	color:green;
+	background-color:#27e833;
 }
 .wrong{
-	color:red;
+	background-color:red;
 }
 #left{
 	background-color:blue;
