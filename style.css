@@ -7,19 +7,19 @@ body{
 	width:50%;
 }
 .correct{
-	background-color:#27e833;
+	background-color:springgreen;
 }
 .wrong{
-	background-color:red;
+	background-color:orangered;
 }
 #left{
-	background-color:blue;
+	background-color:lavender;
 }
 #right{
-	background-color:orange;S
+	background-color:darksalmon;
 }
 #top{
 	height:20%;
-	padding-top: 20px;
-	font-size: 4em;
+	padding-top: 10px;
+	font-size: 1.3em;
 }

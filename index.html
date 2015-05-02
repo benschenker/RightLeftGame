@@ -8,17 +8,15 @@
 	</head>
 	<body class = "container-fluid" ng-controller="GameController">
 		<div id="top" class="row" ng-class="correctnessClass">
-			<h1 class="text-center">
-				<span>
-					{{points}}
-				</span>
-				<span>
-					{{command}}
-				</span>
-				<span>
-					{{timeLeft}}
-				</span>
-			</h1>
+			<div class="text-center">
+				{{command}}
+			</div>
+			<div class="text-center">
+				score: {{points}}
+			</div>
+			<div class="text-center">
+				time remaining: {{timeLeft}}
+			</div>
 		</div>
 		<div class="row">
 			<div id="left" class="pull-left side" ng-click="tryClick('LEFT')"></div>
