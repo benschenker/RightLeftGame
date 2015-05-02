@@ -1,45 +1,37 @@
 var app = angular.module('gameLvR', [])
-.controller('GameController', ['$scope','$timeout', '$interval',function($scope, $timeout, $interval){
+.controller('GameController', ['$scope', '$interval', function($scope, $interval){
 	$scope.commands = ["LEFT", "RIGHT"];
-	$scope.command = "";
-	$scope.points = 0;
-	$scope.clickLock = false; //will respond to clicks only if false
-	$scope.endGame = false;
-	$scope.timeLeft = 20;
-	$scope.correctnessClass = "";
-	
-	$scope.setCorrectness = function(text){
-		$scope.correctnessClass = text;
-	}
+	$scope.game = {
+		points: 0,
+		timeLeft: 20,
+		command: ""
+	};
 	
 	$scope.tryClick = function(text){
-		if($scope.timeLeft && !$scope.clickLock){
-			$scope.clickLock = true;
-			if($scope.command == text){
-				$scope.points++;
-				$scope.setCorrectness("correct");
-				$timeout($scope.resetCommand,100);
+		if($scope.game.timeLeft){
+			if($scope.game.command === text){
+				$scope.updatePoints(1);
 			}
 			else{
-				$scope.points-=5;
-				$scope.setCorrectness("wrong");
-				$timeout($scope.resetCommand,100);
+				$scope.updatePoints(-5);
 			}
 		}
 	}
 	
+	$scope.updatePoints = function(points){
+		$scope.game.points += points;
+		$scope.resetCommand();
+	};
+	
 	$scope.resetCommand = function(){
-		$scope.command = $scope.commands[Math.random()>.5 ? 1:0];
-		$scope.setCorrectness("l");
-		$scope.clickLock = false;
+		$scope.game.command = $scope.commands[Math.round(Math.random())];
 	}
 	
-	$scope.resetCommand(); //initialize our command
+	// Start the game
+	$scope.resetCommand();
 	$interval(function(){
-		$scope.timeLeft-=1;
+		$scope.game.timeLeft-=1;
 	},1000,20);
-	
-	
 }]);
 
 
